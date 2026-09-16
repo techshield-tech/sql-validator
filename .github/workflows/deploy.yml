@@ -12,4 +12,4 @@ permissions:
 
 jobs:
   deploy:
-    uses: techshield-tech/tool-kit/.github/workflows/deploy-pages.yml@v0
+    uses: techshield-tech/tool-kit/.github/workflows/deploy-pages.yml@v0.2.0

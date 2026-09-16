@@ -8,6 +8,7 @@ everything runs in your browser.
 **Live:** https://techshield-tech.github.io/sql-validator/
 
 Part of [MMOALL Developer Tools](https://mmoall.com/tools).
+Also available at [mmoall.com/tools/sql-validator](https://mmoall.com/tools/sql-validator).
 
 ## Features
 
