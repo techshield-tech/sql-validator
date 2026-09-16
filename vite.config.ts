@@ -1,11 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig, loadEnv } from 'vite';
+import { mmoallTool } from '@mmoall/tool-kit/vite';
+import { toolConfig } from './src/tool.config';
 
-// https://vite.dev/config/
-export default defineConfig({
-  // GitHub Pages serves this app from https://techshield-tech.github.io/sql-validator/
-  // so all built asset URLs must be prefixed with the repo name.
-  base: '/sql-validator/',
-  plugins: [react(), tailwindcss()],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, '.', '');
+  return mmoallTool(toolConfig, { env });
 });

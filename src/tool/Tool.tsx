@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Button, ErrorBox, Panel, Select, TextArea, Toolbar } from '../shell/ui';
+import { Button, ErrorBox, Panel, Select, TextArea, Toolbar } from '@mmoall/tool-kit';
 import { SAMPLE_SQL } from './sample';
 import { lintStatement, type LintIssue, type LintSeverity } from './sql-lint';
 import {

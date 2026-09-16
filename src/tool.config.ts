@@ -1,24 +1,15 @@
-// Per-tool metadata. This is the ONE file (together with the `base` in
-// vite.config.ts, index.html's <title>/meta tags, README.md, and everything
-// under src/tool/) that changes when this template is copied to a sibling
-// tool repo.
+// Per-tool metadata. This is the ONE file (together with `src/tool/`,
+// `index.html`'s fallback <title>, and this repo's README) that changes
+// when this template is copied to a new tool repo.
 
-export type ToolCategory = 'JSON' | 'JWT' | 'SQL' | 'Docker' | 'Git' | 'Web';
+// Imports from '@mmoall/tool-kit/config' (a plain-JS-backed subpath), not
+// the main '@mmoall/tool-kit' barrel — this file is also reachable from
+// vite.config.ts's config-load chain, which cannot load the main barrel's
+// .ts source from inside node_modules. See '@mmoall/tool-kit/config's
+// source comment for why.
+import { defineToolConfig } from '@mmoall/tool-kit/config';
 
-export interface ToolConfig {
-  /** Unique identifier used in embed postMessage payloads and URLs. */
-  slug: string;
-  /** Display name shown in the header. */
-  name: string;
-  /** Short description used for meta tags and listings. */
-  description: string;
-  /** One of the shared MMOALL tool categories. */
-  category: ToolCategory;
-  /** Keywords for search/SEO purposes. */
-  keywords: string[];
-}
-
-export const toolConfig: ToolConfig = {
+export const toolConfig = defineToolConfig({
   slug: 'sql-validator',
   name: 'SQL Validator',
   description:
@@ -33,4 +24,4 @@ export const toolConfig: ToolConfig = {
     'validate sql query',
     'online sql tool',
   ],
-};
+});

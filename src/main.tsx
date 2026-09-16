@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import AppShell from './shell/AppShell';
+import { AppShell } from '@mmoall/tool-kit';
+import { toolConfig } from './tool.config';
+import { Tool } from './tool/Tool';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -10,6 +12,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <AppShell />
+    <AppShell config={toolConfig}>
+      <Tool />
+    </AppShell>
   </StrictMode>,
 );

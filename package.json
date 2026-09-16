@@ -9,16 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mmoall/tool-kit": "github:techshield-tech/tool-kit#v0.2.0",
     "node-sql-parser": "^5.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.0"
   }
