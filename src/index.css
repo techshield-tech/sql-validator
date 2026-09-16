@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens shared by every MMOALL dev tool.
+ * Light values live on :root. Dark values apply in two ways so both the OS
+ * preference and an explicit override work:
+ *  1. `prefers-color-scheme: dark`, guarded so an explicit data-theme="light"
+ *     on the root element can still force light mode.
+ *  2. `[data-theme="dark"]` on the root element, for an explicit override
+ *     regardless of OS preference (used by the in-app theme toggle and by
+ *     the embed `?theme=` param / postMessage contract).
+ */
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #0f172a;
+  --color-panel: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-accent-fg: #ffffff;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #0b1220;
+    --color-fg: #e2e8f0;
+    --color-panel: #111827;
+    --color-border: #1f2937;
+    --color-muted: #94a3b8;
+    --color-accent: #3b82f6;
+    --color-accent-fg: #0b1220;
+    --color-danger: #f87171;
+    --color-danger-bg: #2a1215;
+    --color-danger-border: #7f1d1d;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #0b1220;
+  --color-fg: #e2e8f0;
+  --color-panel: #111827;
+  --color-border: #1f2937;
+  --color-muted: #94a3b8;
+  --color-accent: #3b82f6;
+  --color-accent-fg: #0b1220;
+  --color-danger: #f87171;
+  --color-danger-bg: #2a1215;
+  --color-danger-border: #7f1d1d;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
